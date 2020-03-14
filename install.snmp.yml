@@ -1,0 +1,17 @@
+---
+
+- name: Install SNMP agents
+  gather_facts: true
+  hosts: snmp_servers
+  tasks:
+
+    - name: Install snmpd package
+      yum: name=net-snmp state=latest
+
+    - name: Enable snmpd service
+      service: name=snmpd enabled=yes
+      notify: Restart snmpd
+
+  handlers:
+    - name: Restart snmpd
+      action: service name=snmpd state=restarted

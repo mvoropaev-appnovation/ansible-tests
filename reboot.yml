@@ -1,0 +1,9 @@
+---
+
+- name: Reboot servers
+  gather_facts: true
+  hosts: all
+  tasks:
+    - name: Reboot
+      reboot:
+        reboot_timeout: 6000
