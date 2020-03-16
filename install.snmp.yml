@@ -2,11 +2,11 @@
 
 - name: Install SNMP agents
   gather_facts: true
-  hosts: snmp_servers
+  hosts: unix_servers
   tasks:
 
     - name: Install snmpd package
-      yum: name=net-snmp state=latest
+      dnf: name=net-snmp state=latest
 
     - name: Enable snmpd service
       service: name=snmpd enabled=yes

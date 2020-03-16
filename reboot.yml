@@ -2,8 +2,8 @@
 
 - name: Reboot servers
   gather_facts: true
-  hosts: all
+  hosts: unix_servers
   tasks:
     - name: Reboot
       reboot:
-        reboot_timeout: 6000
+

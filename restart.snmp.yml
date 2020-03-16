@@ -2,7 +2,7 @@
 
 - name: Restart SNMP agents
   gather_facts: true
-  hosts: snmp_servers
+  hosts: unix_servers
   tasks:
     - name: Restart snmpd service
       service: name=snmpd state=restarted

@@ -3,7 +3,8 @@ all:
     ansible_user: root
 
   children:
-    snmp_servers:
+    unix_servers:
       hosts:
         ansible-test:
-
+      vars:
+        boot_time_command: 'uptime -s'
